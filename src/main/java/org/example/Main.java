@@ -32,8 +32,8 @@ public class Main {
         phoneBook.add("Sidorov", "89891424242");
         phoneBook.add("Ivanov", "89898984887");
         phoneBook.add("Messi", "89341283333");
+        phoneBook.add("Messi", "89341283333");
 
-        System.out.println("Phone number Messi\n" + phoneBook.get("Messi"));
-        System.out.println("Phone number Ivanov\n" +phoneBook.get("Ivanov"));
+        phoneBook.print();
     }
 }

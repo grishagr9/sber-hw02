@@ -13,18 +13,19 @@ public class PhoneBook {
     }
 
     public void add(String surname, String phone){
-        if(book.containsKey(surname)){
-            Set<String> set = book.get(surname);
-            set.add(phone);
-            book.put(surname, set);
-        }else{
-            Set<String> set = new HashSet<>();
-            set.add(phone);
-            book.put(surname, set);
+        if(!book.containsKey(surname)){
+            book.put(surname, new HashSet<>());
         }
+        book.get(surname).add(phone);
     }
 
     public String get(String surname){
         return book.get(surname).toString();
+    }
+
+    public void print(){
+        for (var item:book.keySet()) {
+            System.out.println(item + " " + book.get(item));
+        }
     }
 }
